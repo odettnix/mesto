@@ -18,26 +18,5 @@
     }
 }
 
-.header {
-    max-width: 880px;
-    margin: 0 auto;
-    border-bottom: 1px solid #545454;
-}
 
-@media screen and (max-width: 880px) {
-    .header {
-        padding-left: 27px;
-    }
-}
 
-.header__logo {
-    margin-bottom: 41px;
-}
-
-@media screen and (max-width: 430px) {
-    .header__logo {
-        margin-bottom: 31.6px;
-        width: 103.74px;
-        height: 24.4px;
-    }
-}

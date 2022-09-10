@@ -1,6 +1,7 @@
 .elements__like {
     background: none;
     background-image: url(../../../images/like.jpg);
+    background-repeat: no-repeat;
     width: 22px;
     height: 19px;
     cursor: pointer;

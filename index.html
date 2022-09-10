@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Место</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/header_logo.svg" alt="Логотип Mesto Russia">
+    </header>
+    <main class="content">
+        <section class="profile">
+            <img class="profile__avatar" src="./images/profile_avatar.jpg" alt="Фотография профиля">
+            <div class="profile__info">
+                <h1 class="profile__name" id="profile__name">Жак-Ив Кусто</h1>
+                <p class="profile__text" id="profile__text">Исследователь океана</p>
+                <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
+            </div>
+            <button class="profile__add-button" type="button"></button>
+        </section>
+
+        <section class="elements">
+            <ul class="elements__gallery">
+                <li class="elements__gallery-item">
+                    <img src="./images/karachaevsk.jpg" alt="Фотография Карачаевск">
+                    <div class="elements__info">
+                        <h2 class="elements__title">Карачаевск</h2>
+                        <button class="elements__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="elements__gallery-item">
+                    <img src="./images/Elbrus.jpg" alt="Фотография Эльбрус">
+                    <div class="elements__info">
+                        <h2 class="elements__title">Эльбрус</h2>
+                        <button class="elements__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="elements__gallery-item">
+                    <img src="./images/Donbai.jpg" alt="Фотография Домбай">
+                    <div class="elements__info">
+                        <h2 class="elements__title">Домбай</h2>
+                        <button class="elements__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="elements__gallery-item">
+                    <img src="./images/Elbrus.jpg" alt="Фотография Эльбрус">
+                    <div class="elements__info">
+                        <h2 class="elements__title">Эльбрус</h2>
+                        <button class="elements__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="elements__gallery-item">
+                    <img src="./images/Donbai.jpg" alt="Фотография Домбай">
+                    <div class="elements__info">
+                        <h2 class="elements__title">Домбай</h2>
+                        <button class="elements__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="elements__gallery-item">
+                    <img src="./images/karachaevsk.jpg" alt="Фотография Карачаево-Черкессия">
+                    <div class="elements__info">
+                        <h2 class="elements__title">Карачаево-Черкессия</h2>
+                        <button class="elements__like" type="button"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">© 2022 Mesto Russia</p>
+    </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup__container">
+            <button class="popup__close" id="popup__close" type="button"></button>
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form class="popup__form" id="popup__form" action="#" name="edit-form">
+                <fieldset class="popup__fieldset">
+                    <input class="popup__input" id="popup_input-Name" placeholder="Ваше имя...">
+                    <input class="popup__input" id="popup_input-Text" placeholder="Напишите что-нибудь о себе...">
+                    <button class="popup__save" type="submit">Сохранить</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

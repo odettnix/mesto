@@ -1,5 +1,8 @@
 .profile__add-button {
     background: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
     background-image: url(../../../images/add_button.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -17,10 +20,9 @@
     opacity: 0.6;
 }
 
-@media screen and (max-width: 1124px) {
+@media screen and (max-width: 1280px) {
     .profile__add-button {
         margin: 36px auto 0;
         width: 282px;
-        height: 50px;
     }
   }

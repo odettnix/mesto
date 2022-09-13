@@ -8,7 +8,8 @@
     line-height: 22px;
     text-align: center;
     width: 358px;
-    height: 50px;
+    /*height: 50px;*/
+    padding: 14px 0;
     border: 0;
     cursor: pointer;
     transition: opacity .3s linear;
@@ -21,5 +22,7 @@
 @media screen and (max-width: 600px) {
     .popup__save {
         width: 238px;
+        font-size: 14px;
+        line-height: 17px;
     }
 }

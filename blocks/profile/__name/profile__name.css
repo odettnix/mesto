@@ -5,10 +5,23 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 1.14;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 1280px) {
     .profile__name {
+        justify-self:center;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .profile__name {
+        max-width: 220px;
         font-size: 27px;
     }
   }
+
+

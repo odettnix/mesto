@@ -1,7 +1,6 @@
 .profile__add-button {
     background: none;
     background-color: transparent;
-    border: none;
     outline: none;
     background-image: url(../../../images/add_button.svg);
     background-position: center;

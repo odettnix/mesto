@@ -12,15 +12,12 @@
 
 }
 
-@media screen and (max-width: 1280px) {
-    .profile__text {
-        justify-self:center;
-    }
-  }
 
   @media screen and (max-width: 600px) {
     .profile__text {
+        line-height: 17px;
         max-width: 200px;
         font-size: 14px;
+        margin-left: 16px;
     }
   }

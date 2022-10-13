@@ -20,54 +20,11 @@
                 <p class="profile__text" id="profile__text">Исследователь океана</p>
                 <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
             </div>
-            <button class="profile__add-button" type="button"></button>
+            <button class="profile__add-button" id="profile__add-button" type="button"></button>
         </section>
 
         <section class="elements">
-            <ul class="elements__gallery">
-                <li class="elements__gallery-item">
-                    <img class="elements__image" src="./images/temple_1.jpg" alt="Фотография Замок химэдзи">
-                    <div class="elements__info">
-                        <h2 class="elements__title">Замок химэдзи</h2>
-                        <button class="elements__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__gallery-item">
-                    <img class="elements__image" src="./images/temple_2.jpg" alt="Фотография Сучжоу">
-                    <div class="elements__info">
-                        <h2 class="elements__title">Сучжоу</h2>
-                        <button class="elements__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__gallery-item">
-                    <img class="elements__image" src="./images/Shanhai.jpg" alt="Фотография Шанхай">
-                    <div class="elements__info">
-                        <h2 class="elements__title">Шанхай</h2>
-                        <button class="elements__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__gallery-item">
-                    <img class="elements__image" src="./images/zontiki.jpg" alt="Фотография Китайские зонты">
-                    <div class="elements__info">
-                        <h2 class="elements__title">Китайские зонты</h2>
-                        <button class="elements__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__gallery-item">
-                    <img class="elements__image" src="./images/karpi.jpg" alt="Фотография Карпы кои">
-                    <div class="elements__info">
-                        <h2 class="elements__title">Карпы кои</h2>
-                        <button class="elements__like" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__gallery-item">
-                    <img class="elements__image" src="./images/Manjushage.jpg" alt="Фотография Ликорис лучистый">
-                    <div class="elements__info">
-                        <h2 class="elements__title">Ликорис лучистый</h2>
-                        <button class="elements__like" type="button"></button>
-                    </div>
-                </li>
-            </ul>
+            <ul class="elements__gallery"></ul>
         </section>
     </main>
 
@@ -75,19 +32,55 @@
         <p class="footer__copyright">© 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup" id="popup">
+    <div class="popup" id="popup__profile">
         <div class="popup__container">
             <button class="popup__close" id="popup__close" type="button"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form" id="popup__form" action="#" name="edit-form">
+            <form class="popup__form_edit" id="popup__form" action="#" name="edit-form">
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input" id="popup__input-name" name="popup__name" placeholder="Ваше имя...">
-                    <input class="popup__input" id="popup__input-text" name="popup__text" placeholder="Напишите что-нибудь о себе...">
+                    <input class="popup__input" id="popup__input-name" name="popup__name" placeholder="Ваше имя">
+                    <input class="popup__input" id="popup__input-text" name="popup__text" placeholder="О себе">
                     <button class="popup__save" type="submit">Сохранить</button>
                 </fieldset>
             </form>
         </div>
     </div>
+
+    <div class="popup" id="popup__add">
+        <div class="popup__container">
+            <button class="popup__close" id="popup__close-add" type="button"></button>
+            <h3 class="popup__title">Новое место</h3>
+            <form class="popup__form" id="popup__form-add" action="#" name="edit-form">
+                <fieldset class="popup__fieldset">
+                    <input class="popup__input" id="popup__input-location" name="popup__name" placeholder="Название">
+                    <input class="popup__input" id="popup__input-url" name="popup__text" placeholder="Ссылка на картинку">
+                    <button class="popup__save" type="submit">Сохранить</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="popup popup_place_image" id="popup__image">
+        <div class="popup__image-container">
+            <button class="popup__close" type="button" id="popup__close-image"></button>
+            <figure class="popup__image-wrapper">
+                <img class="popup__image" src="#" alt>
+                <figcaption class="popup__image-caption"></figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <template class="cards-template" id="template">
+        <li class="elements__gallery-item">
+            <img class="elements__image" src="#" alt="">
+            <div class="elements__info">
+                <h2 class="elements__title"></h2>
+                <button class="elements__like" type="button"></button>
+            </div>
+            <button class="elements__button-remove" type="button"></button>
+        </li>
+    </template>
 
 
     <script src="./scripts/script.js"></script>

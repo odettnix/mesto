@@ -1,5 +1,5 @@
 const popupClose = document.querySelector('#popup__close');
-const popup = document.querySelector('#popup__profile');
+const profilePopup = document.querySelector('#popup__profile');
 const popupOpen = document.querySelector('#profile__edit-button');
 const popupName = document.querySelector('#profile__name');
 const popupText = document.querySelector('#profile__text');
@@ -64,26 +64,26 @@ function openPopup(modal) {
   }
 
 
-function popupOpenButton(){
-    openPopup(popup);
+function openPopupProfile(){
+    openPopup(profilePopup);
     inputName.value = popupName.textContent;
     inputText.value = popupText.textContent;
     
 }
 
-popupClose.addEventListener('click', () => closePopup(popup));
+popupClose.addEventListener('click', () => closePopup(profilePopup));
 
-function formSubmitHandler(evt){
+function handleProfileFormSubmit(evt){
 
     evt.preventDefault();
     popupName.textContent = inputName.value;
     popupText.textContent = inputText.value;
-    closePopup(popup);
+    closePopup(profilePopup);
 }
 
 
-popupOpen.addEventListener('click', popupOpenButton);
-formElement.addEventListener('submit', formSubmitHandler);
+popupOpen.addEventListener('click', openPopupProfile);
+formElement.addEventListener('submit', handleProfileFormSubmit);
 
 
 ////

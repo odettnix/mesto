@@ -41,7 +41,7 @@ function enableSubmitButtton(buttonElement) {
     buttonElement.classList.add('popup__save_disabled');
   }
 
-function toggleButtonState(inputList, buttonElement, settings) {
+function toggleButtonState(inputList, buttonElement) {
     if (hasInvalidInput(inputList)) {
         disableSubmitButtton(buttonElement);
     } else {

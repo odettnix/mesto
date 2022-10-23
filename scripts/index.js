@@ -66,11 +66,7 @@ const initialCards = [
 
 
 
-function disableErrorMessages() {
-  errorMessage.forEach(validMessage => {
-    validMessage.textContent = ""
-  });
-}
+
 
 
 function openPopup(modal) {
@@ -85,7 +81,8 @@ function closePopup(modal) {
 
 function closeByEscape(evt) {
   if (evt.key == 'Escape') {
-    popups.forEach(modal => closePopup(modal));
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
   }
 }
 
@@ -151,15 +148,7 @@ function openImage(image, caption) {
 
 ////
 
-function enableSubmitButtton(buttonElement) {
-  buttonElement.removeAttribute('disabled');
-  buttonElement.classList.remove('popup__save_disabled');
-}
 
-function disableSubmitButtton(buttonElement) {
-  buttonElement.setAttribute('disabled', true);
-  buttonElement.classList.add('popup__save_disabled');
-}
 
 
 
@@ -167,7 +156,7 @@ function disableSubmitButtton(buttonElement) {
 
 
 function addCard(name, link) {
-  const cardElement = cardsTemplate.querySelector('.elements__gallery-item').cloneNode(true);
+  const cardElement = cardsTemplate.querySelector('.element').cloneNode(true);
   const cardElementImage = cardElement.querySelector('.elements__image');
   const removeCardButton = cardElement.querySelector('.elements__button-remove');
   const likeCardButton = cardElement.querySelector('.elements__like');

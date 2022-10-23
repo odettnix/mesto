@@ -10,6 +10,12 @@ function showInputError(formElement, inputElement, errorMessage, settings) {
     inputElement.classList.add(settings.inputErrorClass);
 }
 
+function disableErrorMessages() {
+    errorMessage.forEach(validMessage => {
+        validMessage.textContent = ""
+    });
+}
+
 
 function checkInputValidity(formElement, inputElement, settings) {
     if (!inputElement.validity.valid) {
@@ -25,13 +31,21 @@ function hasInvalidInput(inputList) {
     });
 }
 
+function enableSubmitButtton(buttonElement) {
+    buttonElement.removeAttribute('disabled');
+    buttonElement.classList.remove('popup__save_disabled');
+  }
+  
+  function disableSubmitButtton(buttonElement) {
+    buttonElement.setAttribute('disabled', true);
+    buttonElement.classList.add('popup__save_disabled');
+  }
+
 function toggleButtonState(inputList, buttonElement, settings) {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(settings.inactiveButtonClass);
-        buttonElement.setAttribute('disabled', true);
+        disableSubmitButtton(buttonElement);
     } else {
-        buttonElement.classList.remove(settings.inactiveButtonClass);
-        buttonElement.removeAttribute('disabled');
+        enableSubmitButtton(buttonElement);
     }
 }
 

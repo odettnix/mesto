@@ -18,9 +18,10 @@
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
+@import url(../blocks/element/element.css);
+
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__gallery/elements__gallery.css);
-@import url(../blocks/elements/__gallery-item/elements__gallery-item.css);
 @import url(../blocks/elements/__like/elements__like.css);
 @import url(../blocks/elements/__like/_active/elements__like_active.css);
 @import url(../blocks/elements/__info/elements__info.css);

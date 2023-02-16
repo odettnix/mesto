@@ -8,7 +8,6 @@ export class FormValidator {
 
 
     _hideInputError(inputElement) {
-
         this._errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
         this._errorElement.textContent = "";
         inputElement.classList.remove(this._settings.inputErrorClass);
@@ -20,9 +19,7 @@ export class FormValidator {
         inputElement.classList.add(this._settings.inputErrorClass);
     }
 
-
-
-
+    
     _checkInputValidity(inputElement) {
         if (!inputElement.validity.valid) {
             this._showInputError(inputElement);
@@ -51,7 +48,6 @@ export class FormValidator {
     }
 
     _setEventListeners() {
-
         this._toggleButtonState();
         this._formElement.addEventListener('submit', evt => evt.preventDefault());
         this._inputList.forEach((inputElement) => {

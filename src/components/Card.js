@@ -1,9 +1,9 @@
 export class Card {
-    constructor(data, templateSelector, openImage) {
+    constructor(data, templateSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._templateSelector = templateSelector;
-        this._openImage = openImage;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -16,14 +16,26 @@ export class Card {
         return cardElement;
     }
 
+    _remove() {
+        this._element.remove();
+    }
+
+    _toggleLikeButton() {
+        this._likeCardButton.classList.toggle('elements__like_active');
+    }
+
+    _openCard() {
+        this._handleCardClick.open(this._link, this._name)
+    }
+
     _setEventListeners() {
         this._likeCardButton = this._element.querySelector('.elements__like');
         this._removeCardButton = this._element.querySelector('.elements__button-remove');
         this._cardElementImage = this._element.querySelector('.elements__image');
 
-        this._likeCardButton.addEventListener('click', () => this._likeCardButton.classList.toggle('elements__like_active'));
-        this._removeCardButton.addEventListener('click', () => this._element.remove());
-        this._cardElementImage.addEventListener('click', () => this._openImage(this._link, this._name));
+        this._removeCardButton.addEventListener('click', this._remove.bind(this));
+        this._likeCardButton.addEventListener('click', this._toggleLikeButton.bind(this));
+        this._cardElementImage.addEventListener('click', this._openCard.bind(this));
     }
 
     generateCard() {

@@ -7,7 +7,7 @@ export default class UserInfo {
   getUserInfo() {
     return {
       name: this._nameSelector.textContent,
-      job: this._jobSelector.textContent
+      job: this._jobSelector.textContentgit
     }
   }
 

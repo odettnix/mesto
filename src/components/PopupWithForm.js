@@ -1,37 +1,31 @@
-import Popup from './Popup.js';
-import {
-    inputName,
-    inputText,
-    inputLocation,
-    inputUrl,
-} from '../utils/Constants.js';
+import Popup from "./Popup.js";
 
-export default class PopupWithForm extends Popup {
-    constructor(popupSelector, formSelector, submitFunction) {
-        super(popupSelector);
-        this._formSelector = formSelector;
-        this._submitFunction = submitFunction;
-    }
+export default class PopupWithForm extends Popup { 
+  constructor(popupSelector, submitFunction) {
+    super(popupSelector);
+    this._submitFunction = submitFunction;
+    this._formInputs = Array.from(this._popup.querySelectorAll(".popup__input"));
+    this._formSelector = this._popup.querySelector(".popup__form");
+  }
 
-    close() {
-        super.close();
-        this._formSelector.reset();
-    }
+  _getInputValues() {
+    this._formInputValues = {};
+    this._formInputs.forEach((input) => {
+      this._formInputValues[input.name] = input.value;
+    });
+    return this._formInputValues;
+  }
 
-    _getInputValues() {
-        return {
-            name: inputName.value,
-            job: inputText.value,
-            place: inputLocation.value,
-            url: inputUrl.value
-        }
-    }
+  close() {
+    super.close();
+    this._formSelector.reset();
+  }
 
-    setEventListeners() {
-        super.setEventListeners();
-        this._formSelector.addEventListener('submit', (evt) => {
-            evt.preventDefault();
-            this._submitFunction(this._getInputValues());
-        });
-    }
+  setEventListeners() {
+    super.setEventListeners();
+    this._formSelector.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      this._submitFunction(this._getInputValues());
+    });
+  }
 }

@@ -3,7 +3,7 @@ import Popup from './Popup.js';
 export default class PopupWithConfirm extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._submitForm = this._popup.querySelector('#delete-card');
+    this._submitForm = this._popupSelector.querySelector('#delete-card');
   }
 
   open(id, handleConfirmDelete) {
@@ -27,9 +27,9 @@ export default class PopupWithConfirm extends Popup {
 
   renderLoading(isLoading, submitType) {
     if (isLoading) {
-      this._popup.querySelector('.popup__save').textContent = 'Удаление...';
+      this._popupSelector.querySelector('.popup__save').textContent = 'Удаление...';
     } else {
-      this._popup.querySelector('.popup__save').textContent = submitType;
+      this._popupSelector.querySelector('.popup__save').textContent = submitType;
     }
   }
 }

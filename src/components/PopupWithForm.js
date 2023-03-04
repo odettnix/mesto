@@ -1,11 +1,11 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup { 
-  constructor(popupSelector, submitFunction) {
+  constructor({popupSelector}, submitFunction) {
     super(popupSelector);
     this._submitFunction = submitFunction;
-    this._formInputs = Array.from(this._popup.querySelectorAll(".popup__input"));
-    this._formSelector = this._popup.querySelector(".popup__form");
+    this._formInputs = Array.from(this._popupSelector.querySelectorAll(".popup__input"));
+    this._popupForm = this._popupSelector.querySelector(".popup__form");
   }
 
   _getInputValues() {
@@ -18,12 +18,12 @@ export default class PopupWithForm extends Popup {
 
   close() {
     super.close();
-    this._formSelector.reset();
+    this._popupForm.reset();
   }
 
   setEventListeners() {
     super.setEventListeners();
-    this._formSelector.addEventListener('submit', (evt) => {
+    this._popupForm.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this._submitFunction(this._getInputValues());
     });
@@ -31,9 +31,9 @@ export default class PopupWithForm extends Popup {
 
   renderLoading(isLoading, submitType) {
     if (isLoading) {
-      this._popup.querySelector('.popup__save').textContent = 'Сохранение...';
+      this._popupSelector.querySelector('.popup__save').textContent = 'Сохранение...';
     } else {
-      this._popup.querySelector('.popup__save').textContent = submitType;
+      this._popupSelector.querySelector('.popup__save').textContent = submitType;
     }
   }
 }

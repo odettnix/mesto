@@ -25,7 +25,7 @@ export class Card {
         return cardElement;
     }
 
-    _remove() {
+    remove() {
         this._element.remove();
     }
 

@@ -12,19 +12,13 @@ import Api from '../components/Api';
 import {
   profilePopup,
   popupOpen,
-  popupName,
-  popupText,
   popupAdd,
   popupAddButton,
-  cardsList,
-  popupImageSee,
   settingsList,
   inputName,
   inputText,
   popupAvatar,
   popupAvatarButton,
-  popupConfirmDelete,
-  profileAvatar
 } from '../utils/Constants.js';
 
 
@@ -37,9 +31,9 @@ const api = new Api({
 });
 
 const userInfo = new UserInfo({
-  name: popupName,
-  about: popupText,
-  avatar: profileAvatar
+  name: '#profile__name',
+  about: '#profile__text',
+  avatar: '.profile__avatar-picture'
 });
 
 
@@ -58,9 +52,9 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
 
 
 /////карточки
-const popupWithCard = new PopupWithImage(popupImageSee);
-const cardAdd = new PopupWithForm(popupAdd, submitCardForm);
-const cardRemover = new PopupWithConfirm(popupConfirmDelete);
+const popupWithCard = new PopupWithImage('#popup__image');
+const cardAdd = new PopupWithForm({ popupSelector: '#popup__add' }, submitCardForm);
+const cardRemover = new PopupWithConfirm('#popup__confirm');
 
 cardAdd.setEventListeners();
 popupWithCard.setEventListeners();
@@ -70,7 +64,7 @@ const cardList = new Section({
   renderer: (item) => {
     return createCard(item);
   }
-}, cardsList);
+}, '.elements__gallery');
 
 function createCard(data) {
   const cardElement = new Card({
@@ -83,7 +77,7 @@ function createCard(data) {
       cardRemover.renderLoading(true)
       api.deleteCard(id)
         .then(() => {
-          cardElement._remove();
+          cardElement.remove();
           cardRemover.close();
         })
         .catch((error) => {
@@ -150,20 +144,18 @@ popupAddButton.addEventListener('click', () => {
 });
 
 ////Профиль
-const profileEditor = new PopupWithForm(profilePopup, submitEditForm);
+const profileEditor = new PopupWithForm({ popupSelector: '#popup__profile' }, submitEditForm);
 
 profileEditor.setEventListeners();
 
 function submitEditForm(data) {
   profileEditor.renderLoading(true)
   api.saveNewUserInfo(data.popup__name, data.popup__text)
-    .then(() => {
-      api.getUserInfo()
-        .then((user) => {
-          userInfo.setUserInfo(user.name, user.about);
-          profileEditor.close()
-        })
+    .then((user) => {
+      userInfo.setUserInfo(user.name, user.about);
+      profileEditor.close()
     })
+
     .catch((err) => {
       console.log(err);
     })
@@ -176,26 +168,24 @@ popupOpen.addEventListener('click', () => {
   profileEditor.open();
   const userInfoCurrent = userInfo.getUserInfo();
   inputName.value = userInfoCurrent.name,
-  inputText.value = userInfoCurrent.about
+    inputText.value = userInfoCurrent.about
   editProfileFormValid.resetValidation();
 });
 
 
 ////Аватар
-const avatarEditor = new PopupWithForm(popupAvatar, submitAvatarForm);
+const avatarEditor = new PopupWithForm({ popupSelector: '#popup__avatar' }, submitAvatarForm);
 
 avatarEditor.setEventListeners();
 
 function submitAvatarForm(data) {
   avatarEditor.renderLoading(true)
   api.saveNewUserAvatar(data.popup__avatar)
-    .then(() => {
-      api.getUserInfo()
-        .then((user) => {
-          userInfo.setUserAvatar(user.avatar);
-          avatarEditor.close()
-        })
+    .then((user) => {
+      userInfo.setUserAvatar(user.avatar);
+      avatarEditor.close()
     })
+
     .catch((err) => {
       console.log(err);
     })

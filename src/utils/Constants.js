@@ -25,35 +25,16 @@ export const popupImageSee = document.querySelector('#popup__image');
 export const popupImage = document.querySelector('.popup__image');
 export const popupImageCaption = popupImageSee.querySelector('.popup__image-caption');
 
+export const popupAvatar = document.querySelector('#popup__avatar');
+
+export const popupDeleteCard = document.querySelector('#popup__confirm');
 
 
-export const initialCards = [
-  {
-    name: 'Ceramic wall',
-    link: 'https://images.unsplash.com/photo-1665510431494-5c8c4e5daa96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80'
-  },
-  {
-    name: 'Gate, Jaipur, India',
-    link: 'https://images.unsplash.com/photo-1588673133509-13d815c64b5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'
-  },
-  {
-    name: 'Taj Mahal, India',
-    link: 'https://images.unsplash.com/photo-1523980077198-60824a7b2148?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
-  },
-  {
-    name: 'Ornate doorway, Indian architecture, Jaipur',
-    link: 'https://images.unsplash.com/photo-1524228529766-4d7fe5dc55ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=429&q=80'
-  },
-  {
-    name: 'Flowers on a wall',
-    link: 'https://images.unsplash.com/photo-1458322493962-69c5a4ef7ddf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-  },
-  {
-    name: 'Islamic Architecture Tiles',
-    link: 'https://images.unsplash.com/photo-1519122114654-d665e49b122e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'
-  }
-];
+export const formAvatar = popupAvatar.querySelector('#popup__form-profile');
+export const popupAvatarButton = document.querySelector('.profile__avatar-button');
+export const profileAvatar = document.querySelector('.profile__avatar-picture');
 
+export const popupConfirmDelete = document.querySelector('#popup__confirm');
 
 export const settingsList = {
     formSelector: '.popup__form',

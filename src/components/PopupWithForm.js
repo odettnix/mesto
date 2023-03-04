@@ -28,4 +28,12 @@ export default class PopupWithForm extends Popup {
       this._submitFunction(this._getInputValues());
     });
   }
+
+  renderLoading(isLoading, submitType) {
+    if (isLoading) {
+      this._popup.querySelector('.popup__save').textContent = 'Сохранение...';
+    } else {
+      this._popup.querySelector('.popup__save').textContent = submitType;
+    }
+  }
 }

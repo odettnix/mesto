@@ -37,6 +37,7 @@
 .popup__input_error{border-color:red}
 .popup__input-error{color:red;display:block;font-size:12px;font-weight:400;line-height:15px;min-height:30px}
 .popup__save{background:#000;border:0;border-radius:2px;color:#fff;cursor:pointer;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin-top:30px;padding:14px 0;text-align:center;transition:opacity .3s linear;width:358px}.popup__save:hover{opacity:.8}@media screen and (max-width:600px){.popup__save{font-size:14px;line-height:17px;width:238px}}
+.popup__title-confirm{margin:0 0 8px}
 .popup__save_disabled{background-color:transparent;border:1px solid #000;color:#000;cursor:default;opacity:.2}.popup__save_disabled:hover{opacity:.2}
 .popup__image-caption{color:#fff;font-size:12px;font-weight:400;line-height:15px;padding-top:10px}
 .popup__image-container{background:none;border-radius:0;box-shadow:none;margin:0 auto;max-height:75vh;max-width:75vw;padding:0;position:relative}

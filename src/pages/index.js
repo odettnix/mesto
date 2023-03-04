@@ -33,7 +33,7 @@ const api = new Api({
 const userInfo = new UserInfo({
   name: '#profile__name',
   about: '#profile__text',
-  avatar: '.profile__avatar-picture'
+  avatar: '#profile__avatar'
 });
 
 
